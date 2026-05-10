@@ -1,4 +1,4 @@
-"""Authentication utilities."""
+import os
 
 from datetime import datetime, timedelta
 from typing import Optional
@@ -13,7 +13,7 @@ from models import User
 from schemas import UserOut
 
 # Secret key and algorithm
-SECRET_KEY = "${SECRET_KEY}"
+SECRET_KEY = os.getenv("SECRET_KEY")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
